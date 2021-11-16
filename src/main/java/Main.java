@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //objeto para recibir datos por teclado
         Scanner entrada = new Scanner(System.in);
+        //variables
         int mayor = 0;
         String a, b;
         System.out.println("Escribe un número: ");
@@ -25,7 +27,7 @@ public class Main {
 
         System.out.println("Entre los números "+a+" y "+b+" el mayor es: "+mayor);
     }
-
+    //función para saber si el dato es númerico
     private static boolean isNumeric(String cadena){
         try {
             Integer.parseInt(cadena);
