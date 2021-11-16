@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        //variables
         int a = 10, b = 20, mayor = 0;
         if(a == b){
             System.out.println("Los números son iguales.");
