@@ -1,0 +1,13 @@
+
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(®ÿ¨
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(òòâ¹ùÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÒÔœ»
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(öÕêŒ
+H
+java:S1128"-Remove this unused import 'java.util.Locale'.(åğ×±ûÿÿÿÿ
+H
+java:S1068"-Remove this unused "defPrecio" private field.(òòâ¹ùÿÿÿÿ
+A
+java:S1068"+Remove this unused "defPeso" private field.(öÕêŒ
+i
+java:S1192["NUse already-defined constant 'defColor' instead of duplicating its value here.(¸›ëıÿÿÿÿ
