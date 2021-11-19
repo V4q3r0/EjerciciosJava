@@ -1,13 +1,16 @@
 public class Videojuego implements Entregable{
+    //Variables const por defecto
     private static int defHoras = 10;
     private static boolean defEntregado = false;
 
+    //Atributos
     private String titulo;
     private int horas;
     private boolean entregado;
     private String genero;
     private String compania;
 
+    //Constructores
     public Videojuego(){
         this.titulo = "";
         this.horas = defHoras;
@@ -32,6 +35,7 @@ public class Videojuego implements Entregable{
         this.compania = compania;
     }
 
+    //Getters and Setters
     public String getTitulo() {
         return titulo;
     }
@@ -64,6 +68,7 @@ public class Videojuego implements Entregable{
         this.compania = compania;
     }
 
+    //Método para mostrar los datos del objeto
     public String toString(){
         String YesNo;
         if (entregado) {
@@ -75,6 +80,7 @@ public class Videojuego implements Entregable{
         return  cadena;
     }
 
+    //Métodos de la interface
     @Override
     public void entregar() {
         this.entregado = true;
@@ -88,5 +94,20 @@ public class Videojuego implements Entregable{
     @Override
     public boolean isEntregado() {
         return entregado;
+    }
+
+    //Método para comparar qué objeto tiene mayor horas estimadas
+    @Override
+    public boolean compareTo(Object a) {
+        if(a instanceof Videojuego){
+            if(horas > ((Videojuego) a).getHoras()){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            System.out.println("El objeto no es valido.");
+            return false;
+        }
     }
 }

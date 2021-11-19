@@ -1,13 +1,16 @@
 public class Serie implements Entregable{
+    //Variables constantes por defecto
     private static int defNumTemporadas = 3;
     private static boolean defEntregado = false;
 
+    //Atributos
     private String titulo;
     private int numTemporadas;
     private boolean entregado;
     private String genero;
     private String creador;
 
+    //Constructores
     public Serie(){
         this.titulo = "";
         this.numTemporadas = defNumTemporadas;
@@ -32,6 +35,7 @@ public class Serie implements Entregable{
         this.entregado = defEntregado;
     }
 
+    //Getters and Setters
     public String getTitulo() {
         return titulo;
     }
@@ -64,6 +68,7 @@ public class Serie implements Entregable{
         this.creador = creador;
     }
 
+    //Método para mostrar los datos del objeto
     public String toString(){
         String YesNo;
         if(entregado){
@@ -75,6 +80,7 @@ public class Serie implements Entregable{
         return cadena;
     }
 
+    //Métodos de la interface
     @Override
     public void entregar() {
         this.entregado = true;
@@ -88,6 +94,21 @@ public class Serie implements Entregable{
     @Override
     public boolean isEntregado() {
         return entregado;
+    }
+
+    //Método para comprobar que serie tiene mayor número de temporadas
+    @Override
+    public boolean compareTo(Object a) {
+        if(a instanceof Serie){
+            if(numTemporadas > ((Serie) a).getNumTemporadas()){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            System.out.println("El objeto no es valido");
+            return false;
+        }
     }
 
 }
