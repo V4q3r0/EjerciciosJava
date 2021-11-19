@@ -1,12 +1,12 @@
 public class Persona {
     //Atributos
-    private static final char valorSexo = 'M';
+    private static final char valorSexo = 'M';//Const
     private String nombre = "";
     private String edad = "";
     private String DNI;
     private char sexo = valorSexo;
-    private String peso = "0";
-    private String altura = "0";
+    private int peso;
+    private float altura;
 
     //Metodos y constructores
     public Persona(){
@@ -16,15 +16,17 @@ public class Persona {
     public Persona(String nombre, String edad, char sexo){
         this.nombre = nombre;
         this.edad = edad;
-        this.sexo = sexo;
+        comprobarSexo(sexo);
+        this.peso = 0;
+        this.altura = 0;
         generarDNI();
     }
 
-    public Persona(String nombre, String edad, char sexo, String peso, String altura) {
+    public Persona(String nombre, String edad, char sexo, int peso, float altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.DNI = DNI;
-        this.sexo = sexo;
+        comprobarSexo(sexo);
         this.peso = peso;
         this.altura = altura;
         generarDNI();
@@ -59,25 +61,25 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public String getPeso() {
+    public int getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
 
-    public String getAltura() {
+    public float getAltura() {
         return altura;
     }
 
-    public void setAltura(String altura) {
+    public void setAltura(float altura) {
         this.altura = altura;
     }
 
     public int calcularIMC(){
         //Pero ideal es igual a peso/(altura^2)
-        float ideal = (float) (Float.parseFloat(this.peso)/(Math.pow(Float.parseFloat(this.altura),2)));
+        float ideal = (float) (this.peso/(Math.pow(this.altura,2)));
         if(ideal > 0 && ideal < 20){
             final int valor = -1;
             return valor;
@@ -98,12 +100,16 @@ public class Persona {
         }
     }
 
-    //Función que no usamos ¿?
-    private void comprobarSexo(){
-        if(this.sexo == 'F' || this.sexo == 'M'){
-            //Nada
-        }else{
-            this.sexo = sexo;
+    private void comprobarSexo(char sexo){
+        switch (sexo){
+            case 'M':
+                this.sexo = sexo;
+                break;
+            case 'F':
+                this.sexo = sexo;
+                break;
+            default:
+                this.sexo = valorSexo;
         }
     }
 

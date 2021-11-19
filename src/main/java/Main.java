@@ -23,15 +23,15 @@ public class Main {
         if(!isNumeric(nombre) && isNumeric(edad) && Integer.parseInt(edad) > 0 && !isNumeric(sexo) && sexo.length() < 2 && isNumeric(peso) && isNumeric(altura)){
             //Objetos de la clase persona
             Persona persona1 = new Persona();
-            Persona persona2 = new Persona(nombre, edad, sexo.charAt(0), peso, altura);
+            Persona persona2 = new Persona(nombre, edad, sexo.charAt(0), Integer.parseInt(peso), Float.parseFloat(altura));
             Persona persona3 = new Persona(nombre, edad, sexo.charAt(0));
 
             //Seteamos los datos del objeto por defecto
             persona1.setNombre("Jose");
             persona1.setEdad("25");
             persona1.setSexo('M');
-            persona1.setPeso("75");
-            persona1.setAltura("1.72");
+            persona1.setPeso(75);
+            persona1.setAltura((float) 1.72);
 
             //Comprobamos el IMC de caja objeto e imprimir su estado
             if(persona1.calcularIMC() == -1){
