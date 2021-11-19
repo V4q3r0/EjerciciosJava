@@ -2,17 +2,25 @@ import java.util.Locale;
 
 public class Electrodomestico {
 
+    //Constantes para los valores por defecto
     private static final String defColor = "blanco";
     private static final int defPrecio = 100;
     private static final char defConsumo = 'F';
     private static final int defPeso = 5;
 
-    private int precioBase;
-    private String color;
-    private char consumo;
-    private int peso;
+    //Atributos
+    protected int precioBase;
+    protected String color;
+    protected char consumo;
+    protected int peso;
 
-    public Electrodomestico(){}
+    //Constructores y métodos
+    public Electrodomestico(){
+        this.precioBase = defPrecio;
+        this.peso = defPeso;
+        this.consumo = defConsumo;
+        this.color = defColor;
+    }
 
     public Electrodomestico(int precio, int peso){
         this.precioBase = precio;
@@ -60,6 +68,7 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
+    //Métodos para comprobar si los datos ingresados son validos o se efecturán los por defecto
     private void comprobarConsumoEnergetico(char letra){
         switch (letra){
             case 'A':
@@ -105,6 +114,42 @@ public class Electrodomestico {
                 break;
             default:
                 this.color = defColor;
+        }
+    }
+
+    //Función para darle el valor final al precio del producto
+    public void precioFinal(float valor){
+        this.precioBase += valor;
+        switch (this.consumo){
+            case 'A':
+                this.precioBase += 100;
+                break;
+            case 'B':
+                this.precioBase += 80;
+                break;
+            case 'C':
+                this.precioBase += 60;
+                break;
+            case 'D':
+                this.precioBase += 50;
+                break;
+            case 'E':
+                this.precioBase += 30;
+                break;
+            case 'F':
+                this.precioBase += 10;
+                break;
+            default:
+                this.consumo = defConsumo;
+        }
+        if(this.peso >= 0 && this.peso <= 19){
+            this.consumo += 10;
+        }else if(this.peso >= 20 && this.peso <= 49){
+            this.consumo += 50;
+        }else if(this.peso >= 50 && this.peso <= 79){
+            this.consumo += 80;
+        }else{
+            this.peso += 100;
         }
     }
 }
