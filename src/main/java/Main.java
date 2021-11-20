@@ -78,9 +78,10 @@ public class Main {
             }
 
             //Mostramos cada objeto
-            persona1.aString();
-            persona2.aString();
-            persona3.aString();
+            System.out.println();
+            System.out.println(persona1.toString());
+            System.out.println(persona2.toString());
+            System.out.println(persona3.toString());
         }else{
             System.out.println("Datos ingresados no son validos.");
             System.exit(0);

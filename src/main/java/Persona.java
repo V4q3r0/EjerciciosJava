@@ -113,16 +113,11 @@ public class Persona {
         }
     }
 
-    //El nombre toString puede causar confusiones y errores decidí usar aString()
-    //Estuve indeciso a la hora si debía enviar un objeto de Persona con los datos. ¿?
-    public void aString(){
-        System.out.println("Nombre: "+this.nombre);
-        System.out.println("Edad: "+this.edad);
-        System.out.println("DNI: "+this.DNI);
-        System.out.println("Sexo: "+this.sexo);
-        System.out.println("Peso: "+this.peso);
-        System.out.println("Altura: "+this.altura);
-        System.out.println();
+    //Método toString para mostrar los datos del objeto
+    public String toString(){
+        String cadena = "Nombre: "+nombre+"\nEdad: "+edad+"\nDNI: "+DNI+"\nSexo: "+sexo+"\nPeso: "+peso+"\nAltura: "+altura+"\n";
+
+        return cadena;
     }
 
     //Generamos un número de 8 digitos aleatorio y cambiamos los números por letras [A,B,C,D,E,F,G,H,I,J]
