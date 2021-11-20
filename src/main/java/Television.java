@@ -33,17 +33,21 @@ public class Television extends Electrodomestico{
 
     //Método para sumar algunos valores a el precio del producto
     public void precioFinal(){
+        int precio = getPrecioBase();
+        int incremento = precio * 30 / 100;
         if(this.resolucion > 40){
-            int precio = getPrecioBase();
-            int incremento = precio * 30 / 100;
-            precioFinal(incremento);
+            if(this.sintonizador){
+                precioFinal(incremento+50);
+            }else{
+                precioFinal(incremento);
+            }
+
         }else{
-            precioFinal(0);
-        }
-        if(this.sintonizador){
-            precioFinal(50);
-        }else{
-            precioFinal(0);
+            if(this.sintonizador){
+                precioFinal(50);
+            }else{
+                precioFinal(0);
+            }
         }
     }
 }

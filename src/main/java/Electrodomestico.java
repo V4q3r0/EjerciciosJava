@@ -118,7 +118,7 @@ public class Electrodomestico {
     }
 
     //Función para darle el valor final al precio del producto
-    public void precioFinal(float valor){
+    public void precioFinal(int valor){
         this.precioBase += valor;
         switch (this.consumo){
             case 'A':
@@ -143,13 +143,17 @@ public class Electrodomestico {
                 this.consumo = defConsumo;
         }
         if(this.peso >= 0 && this.peso <= 19){
-            this.consumo += 10;
+            this.precioBase += 10;
         }else if(this.peso >= 20 && this.peso <= 49){
-            this.consumo += 50;
+            this.precioBase += 50;
         }else if(this.peso >= 50 && this.peso <= 79){
-            this.consumo += 80;
+            this.precioBase += 80;
         }else{
-            this.peso += 100;
+            this.precioBase += 100;
         }
+    }
+
+    public void precioFinal() {
+        precioFinal(0);
     }
 }

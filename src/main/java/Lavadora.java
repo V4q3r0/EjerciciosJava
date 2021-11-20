@@ -28,7 +28,9 @@ public class Lavadora extends Electrodomestico{
     //Método para sumar el precio del producto
     public void precioFinal(){
         if(this.carga > 30){
-
+            precioFinal(50);
+        }else{
+            precioFinal(0);
         }
     }
 }
